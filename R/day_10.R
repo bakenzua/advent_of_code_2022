@@ -1,5 +1,6 @@
-library(tidyverse)
-
+library(dplyr)
+library(tibble)
+library(stringr)
 #######################################################
 ###           Get inputs
 #######################################################
@@ -182,7 +183,6 @@ get_register_states <- function(data) {
     run <- TRUE
     x <- 1
     instruction_pointer <- 1
-    addx_value <- NA_real_
     addx_counter <- 0
     cycle <- 1
 
@@ -200,12 +200,11 @@ get_register_states <- function(data) {
         } else {
             # addx
             if (addx_counter == 1) {
-                x <- addx_value + x
+                x <- cycle_value + x
                 addx_counter <- 0
                 instruction_pointer <- instruction_pointer + 1
             } else {
                 addx_counter <- addx_counter + 1
-                addx_value <- cycle_value
             }
         }
 
@@ -256,6 +255,7 @@ part_2_line_printer(sample_input2)
 
 part_2_line_printer(input_10)
 
+library(ggplot2)
 get_register_states(input_10) |>
     mutate(row = max(row) - row) |>
     ggplot(aes(row, col, fill = pixel)) +
