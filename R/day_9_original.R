@@ -3,9 +3,19 @@ library(stringr)
 library(tibble)
 
 #######################################################
+###    This was the orginal solution, which
+###    uses all tidyverse, especially constructing
+###    tibble_rows etc
+###    Very slow!
+###    I'm going to blame catching covid and requiring 
+###    lemsips to complete
+###    I redid this with more base R, in day_9_better.R
+#######################################################
+
+#######################################################
 ###           Get inputs
 #######################################################
-sample_input <- tibble(
+sample_input_d9 <- tibble(
     x = str_split(
         "R 4
 U 4
@@ -18,7 +28,7 @@ R 2",
         "\n"
     ) |> unlist()
 )
-sample_input_2 <- tibble(
+sample_input_2_d9 <- tibble(
     x = str_split(
         "R 5
 U 8
@@ -182,15 +192,15 @@ do_day_9 <- function(data, rope = c("H", "1"), verbose = FALSE, return_positions
 #######################################################
 ###           do part 1
 #######################################################
-do_day_9(sample_input) |> print() # 13 # 0.22 secs
+do_day_9(sample_input_d9) |> print() # 13 # 0.22 secs
 do_day_9(input_9) |> print() # 6011
 
 #######################################################
 ###           do part 2
 #######################################################
-do_day_9(sample_input, rope = c("H", 1:9)) |> print() # 1 # 1.1 secs!
+do_day_9(sample_input_d9, rope = c("H", 1:9)) |> print() # 1 # 1.1 secs!
 
-do_day_9(sample_input_2, rope = c("H", 1:9)) |> print() # 36 # 4.22sec
+do_day_9(sample_input_2_d9, rope = c("H", 1:9)) |> print() # 36 # 4.22sec
 
 # super slow!
 do_day_9(input_9, rope = c("H", 1:9))

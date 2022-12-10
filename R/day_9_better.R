@@ -2,10 +2,17 @@ library(dplyr)
 library(stringr)
 
 #######################################################
+###    An improved solution using vectors for 
+###    flow control logic, positions and movement etc.
+###    Tibbles etc reserved for the once only stuff
+###    case_when rather than sequential if statements 
+#######################################################
+
+#######################################################
 ###           Get inputs
 #######################################################
 
-sample_input <- tibble(
+sample_input_d9 <- tibble(
     x = str_split(
         "R 4
 U 4
@@ -18,7 +25,7 @@ R 2",
         "\n"
     ) |> unlist()
 )
-sample_input_2 <- tibble(
+sample_input_2_d9 <- tibble(
     x = str_split(
         "R 5
 U 8
@@ -130,14 +137,14 @@ do_day_9_ii <- function(data, rope_knots = c("H", "1"), knot_of_interest = 2) {
 #######################################################
 ###           do part 1
 #######################################################
-do_day_9_ii(sample_input, rope_knots = c("H", "1"), knot_of_interest = 2)
+do_day_9_ii(sample_input_d9, rope_knots = c("H", "1"), knot_of_interest = 2)
 
 do_day_9_ii(input_9, rope_knots = c("H", "1"), knot_of_interest = 2)
 
 #######################################################
 ###           do part 2
 #######################################################
-do_day_9_ii(sample_input, rope_knots = c("H", as.character(1:9)), knot_of_interest = 10)
-do_day_9_ii(sample_input_2, rope_knots = c("H", as.character(1:9)), knot_of_interest = 10)
+do_day_9_ii(sample_input_d9, rope_knots = c("H", as.character(1:9)), knot_of_interest = 10)
+do_day_9_ii(sample_input_2_d9, rope_knots = c("H", as.character(1:9)), knot_of_interest = 10)
 
 do_day_9_ii(input_9, rope_knots = c("H", as.character(1:9)), knot_of_interest = 10)
