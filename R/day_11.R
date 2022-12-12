@@ -2,6 +2,9 @@ library(tibble)
 library(stringr)
 library(tidyr)
 
+#######################################################
+###           Get inputs
+#######################################################
 sample_input <- tibble(
     x = str_split(
         "Monkey 0:
@@ -37,6 +40,10 @@ Monkey 3:
 
 input_11 <- adventdrob::advent_input(11, 2022)
 
+
+#######################################################
+###           Day 11 functions
+#######################################################
 parse_instructions <- function(data) {
     data |>
         mutate(
@@ -174,6 +181,10 @@ do_monkey_instructions <- function(data, rounds = 20, div_worry_by = 3) {
     return(results)
 }
 
+
+#######################################################
+###           Do problems
+#######################################################
 # part 1
 do_monkey_instructions(sample_input, rounds = 20)$monkey_business == 10605
 do_monkey_instructions(input_11, rounds = 20)$monkey_business #110264
