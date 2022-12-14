@@ -2,13 +2,21 @@
 
 My non-pretty non-optimised code for AoC 2022!
 
-Probably incomplete puzzle set by Christmas, but so far (D10) so good!
+Probably incomplete puzzle set by Christmas, but so far (D14) so good!
 
 Using R because :heart:
 
 Using the fantastic [adventdrob](https://github.com/dgrtwo/adventdrob) package for input.
 
 This git repo was rebuilt to remove all AoC inputs and problem descriptions, as per copyright and [Eric Wastl's](https://mobile.twitter.com/ericwastl/status/1465805354214830081) request.
+
+## Day 12 Plot
+
+![](https://github.com/bakenzua/advent_of_code_2022/blob/aea8cba09e51062945b6cfbd3c049210011b0bff/img/day_12_graph_plot.png)
+
+## Day 14 Plot
+
+![](https://github.com/bakenzua/advent_of_code_2022/blob/aea8cba09e51062945b6cfbd3c049210011b0bff/img/day_14.jpg)
 
 # Other AoC 2022 stuff
 
@@ -30,3 +38,4 @@ Not necessarily answers or even R
 -   [Emil Hvitfeldt](https://emilhvitfeldt.github.io/rstats-adventofcode/2022.html?panelset=day-3)
 
 ![](https://pbs.twimg.com/media/Fi3t2eGXgAA5i5o?format=jpg&name=medium)
+
